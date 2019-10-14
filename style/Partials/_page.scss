@@ -1,0 +1,56 @@
+section.blogs {
+  .blog-block {
+    position: relative;
+    margin-bottom: 150px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -450px;
+      bottom: -100px;
+      background: url('assets/images/blog-block-bg.svg');
+      background-size: 100% 100%;
+      background-position: center;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .content-wrapper {
+      padding: 100px 0;
+
+      .fpc-articles {
+        padding: 50px;
+      }
+
+      .card {
+        text-transform: none;
+        text-decoration: none;
+        color: #000;
+
+        a.image-link, img.card-img-top {
+          height: 15vh;
+        }
+
+        > .card-body {
+          padding: 20px 50px;
+
+          .card-title {
+            padding-bottom: 5px;
+            line-height: 48px;
+
+          }
+
+          p {
+            line-height: 21px;
+          }
+
+          @include respond-to(xl) {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

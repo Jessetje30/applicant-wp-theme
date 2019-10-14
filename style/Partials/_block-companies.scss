@@ -1,0 +1,35 @@
+section.block-companies {
+  padding-bottom: 70px;
+  position: relative;
+  z-index: 10;
+
+  .companies-holder {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 6px;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 15px;
+
+      @include respond-to(md) {
+        justify-content: left;
+      }
+
+      .logo {
+        height: auto;
+        margin-bottom: 25px;
+
+        @include respond-to(md) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

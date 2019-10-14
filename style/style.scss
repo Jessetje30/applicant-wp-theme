@@ -1,0 +1,34 @@
+/*
+Theme Name: Applicant Theme
+Theme URI: https://coddin.nl
+Author: Coddin Webdevelopment
+Author URI: https://coddin.nl
+Description: A clean starter theme based on Bootstrap
+Version: 1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: SCSS, clean, bootstrap
+Text Domain: coddin
+*/
+
+@import "variables";
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "mixins";
+
+@import "globals";
+
+@import "Partials/header";
+@import "Partials/footer";
+@import "Partials/page";
+@import "Partials/block-features";
+@import "Partials/block-hero";
+@import "Partials/block-companies";
+@import "Primary/front-page";
+@import "Primary/information";
+
+//Pages
+@import "Primary/sign-up";
+
+

@@ -1,0 +1,78 @@
+section#hero {
+  padding-top: 230px;
+  height: 100vh;
+  color: #FFFFFF;
+
+  @include respond-down(lg){
+    padding-top: 100px;
+  }
+
+  .hero-content {
+
+    .btn-hero {
+      border: 3px solid #ffffff;
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      padding: 10px 30px;
+      border-radius: 6px;
+      font-size: 22px;
+      margin-top: 20px;
+      min-width: 240px;
+
+      span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 2px 2px 5px darken(#7692D2, 5%);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -100%;
+        background: linear-gradient(70deg, #7692D2 0%, #8DBEDB 50%, #7692D2 100%) 0 0;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        &:after {
+          right: -100%;
+          left: 0;
+        }
+      }
+    }
+
+    a {
+      color: #DEF0FF;
+      text-transform: none;
+      text-decoration: none;
+    }
+  }
+
+  .hero-image {
+    img {
+      margin-right: 10px;
+
+      @include respond-to(lg){
+        padding: 100px;
+        margin-top: -190px;
+      }
+    }
+  }
+  .hero-introtext {
+    > p {
+      font-size: 40px;
+    }
+  }
+
+  .hero-textend {
+    font-size: 20px;
+    margin-top: 0.2rem;
+  }
+
+}

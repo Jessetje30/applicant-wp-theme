@@ -1,0 +1,125 @@
+header {
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 50px;
+
+  @include respond-down(md) {
+    padding-top: 0;
+  }
+
+  &:after {
+    content: '';
+    background: url('assets/images/logo-hero-bg.svg') center center;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    height: 500px;
+    display: block;
+    top: 14%;
+    left: 20%;
+    transform: translateX(-50%) translateY(-60%);
+    z-index: 1;
+
+    @media (max-width: 1400px) {
+      left: 15%
+    }
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+
+  .logo {
+    position: relative;
+    @include respond-down(xl) {
+      background: white;
+      border-radius: 50%;
+      padding: 200px 200px 50px 200px;
+      margin: -200px -200px -50px -200px;
+    }
+    @include respond-down(md){
+      padding: 150px 150px 50px 150px;
+      margin: -150px -150px -50px -150px;
+    }
+    @include respond-down(sm){
+      padding: 60px 10px 60px 70px;
+      margin: -60px -10px -60px -70px;
+    }
+
+    a {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  #primary-menu {
+    position: relative;
+    z-index: 2;
+
+    ul.navbar-nav {
+      li.nav-item {
+        padding-right: 20px;
+
+        @media (min-width: 1200px) and (max-width: 1399px) {
+          padding-right: 5px;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+}
+
+section#header-hero {
+  background: no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  /*&:after {
+    content: "";
+    background: url('assets/images/hero-footer.svg') center bottom;
+    background-size: 100% 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 900px;
+  }*/
+
+  .hero-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+.account {
+  font-size: 15px;
+  text-align: right;
+  padding: 0.5rem 1rem;
+
+  @include respond-down(lg){
+    padding-right: 0;
+  }
+
+  > a {
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+
+.register-btn {
+  padding-right: 0.5rem;
+}
