@@ -1,8 +1,8 @@
 <section id="hero">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-5 hero-content">
-                <div class="hero-introtext">
+        <div class="row justify-items-center align-items-center pt-xs-0 pt-md-5">
+            <div class="col-12 col-md-5">
+                <div class="hero-introtext pt-xl-5">
                     <?php the_field('intro') ?>
                 </div>
                 <?php if (get_field('button')): ?>
@@ -21,7 +21,7 @@
                 </div>
 
             </div>
-            <div class="col-12 col-md-7 hero-image">
+            <div class="col-12 col-md-7">
                 <?php if (get_field('hero_image')): ?>
                     <img src="<?php the_field('hero_image'); ?>" class="img-fluid"/>
                 <?php endif; ?>

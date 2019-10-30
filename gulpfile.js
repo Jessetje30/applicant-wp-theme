@@ -18,7 +18,10 @@ gulp.task('sass', function () {
             includePaths: ['node_modules'],
             importer: tildeImporter
         }).on('error', sass.logError))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 });
 
 gulp.task('scripts', function() {
@@ -26,14 +29,15 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('browser-sync', function() {
-    browserSync.init(["./*.php", "./*.css", "./*.scss", "dist/js/*.js"], {
-        proxy: "http://applicant-website.test"
+    browserSync.init([".**/*.php", "./*.css", "assets/js/*.js"], {
+        proxy: "applicant-website.test"
     });
 });
 
 gulp.task('default', ['sass', 'browser-sync', 'scripts'], function () {
     gulp.watch("style/*.scss", ['sass']);
-    gulp.watch("style/**/*.scss", ['sass']);
+    gulp.watch("style/*/*.scss", ['sass']);
+    gulp.watch("style/*/*/*.scss", ['sass']);
     gulp.watch("assets/js/*.js", ['scripts']);
 });
 
@@ -77,3 +81,4 @@ function bundleApp(isProduction) {
         .pipe(source('main.js'))
         .pipe(gulp.dest('./dist/js/'));
 }
+

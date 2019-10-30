@@ -4,7 +4,28 @@ header {
   padding-top: 50px;
 
   @include respond-down(md) {
-    padding-top: 0;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  @include respond-down(xl) {
+    background: white !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .wrapper {
+    z-index: 15;
+    @media screen and (max-width: 458px) {
+      margin-top: 20px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hamburger {
+
+    }
   }
 
   &:after {
@@ -31,18 +52,7 @@ header {
   .logo {
     position: relative;
     @include respond-down(xl) {
-      background: white;
-      border-radius: 50%;
-      padding: 200px 200px 50px 200px;
-      margin: -200px -200px -50px -200px;
-    }
-    @include respond-down(md){
-      padding: 150px 150px 50px 150px;
-      margin: -150px -150px -50px -150px;
-    }
-    @include respond-down(sm){
-      padding: 60px 10px 60px 70px;
-      margin: -60px -10px -60px -70px;
+      background: unset;
     }
 
     a {
@@ -55,6 +65,12 @@ header {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: none;
+    @include respond-down(xl) {
+      color: #7f95c1;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.7;
+    }
   }
 
   #primary-menu {
@@ -110,7 +126,7 @@ section#header-hero {
   text-align: right;
   padding: 0.5rem 1rem;
 
-  @include respond-down(lg){
+  @include respond-down(lg) {
     padding-right: 0;
   }
 

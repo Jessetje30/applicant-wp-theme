@@ -1,49 +1,55 @@
 section#hero {
-  padding-top: 230px;
+  padding-top: 50px;
   height: 100vh;
   color: #FFFFFF;
 
-  @include respond-down(lg){
-    padding-top: 100px;
+  @include respond-down(xl) {
+    padding-top: unset;
+    max-height: 80vh;
   }
 
-  .hero-content {
+  @include respond-down(lg) {
+    padding-top: 100px;
+  }
+  @include respond-down(sm) {
+    padding-top: 50px;
+  }
 
-    .btn-hero {
-      border: 3px solid #ffffff;
-      color: #FFFFFF;
-      transition: all 0.3s ease;
+
+  .btn-hero {
+    border: 3px solid #ffffff;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-size: 22px;
+    margin-top: 20px;
+    min-width: 240px;
+
+    span {
       position: relative;
-      overflow: hidden;
-      padding: 10px 30px;
-      border-radius: 6px;
-      font-size: 22px;
-      margin-top: 20px;
-      min-width: 240px;
+      z-index: 2;
+      text-shadow: 2px 2px 5px darken(#7692D2, 5%);
+    }
 
-      span {
-        position: relative;
-        z-index: 2;
-        text-shadow: 2px 2px 5px darken(#7692D2, 5%);
-      }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: -100%;
+      background: linear-gradient(70deg, #7692D2 0%, #8DBEDB 50%, #7692D2 100%) 0 0;
+      transition: all 0.3s ease;
+    }
 
+    &:hover {
       &:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: -100%;
-        background: linear-gradient(70deg, #7692D2 0%, #8DBEDB 50%, #7692D2 100%) 0 0;
-        transition: all 0.3s ease;
-      }
-
-      &:hover {
-        &:after {
-          right: -100%;
-          left: 0;
-        }
+        right: -100%;
+        left: 0;
       }
     }
 
@@ -58,12 +64,12 @@ section#hero {
     img {
       margin-right: 10px;
 
-      @include respond-to(lg){
+      @include respond-to(lg) {
         padding: 100px;
-        margin-top: -190px;
       }
     }
   }
+
   .hero-introtext {
     > p {
       font-size: 40px;

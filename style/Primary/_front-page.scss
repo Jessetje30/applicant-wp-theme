@@ -46,8 +46,12 @@ section.fp-content {
 
   .content-wrapper {
 
-    @include respond-to(md) {
+    @include respond-to(lg) {
       padding: 100px 0;
+    }
+
+    @include respond-down(lg) {
+      padding: 0;
     }
 
     .fpc-articles {
@@ -124,5 +128,12 @@ section.fp-content {
 
 #header-hero + .block-companies {
   margin-top: -410px;
-  margin-bottom: 70px;
+  margin-bottom: 0;
+
+  @include respond-down(xl) {
+    margin-top: -310px;
+  }
+  @include respond-down(md){
+    margin-top: -70px;
+  }
 }

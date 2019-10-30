@@ -7101,7 +7101,21 @@ header {
   padding-top: 50px; }
   @media (max-width: 767px) {
     header {
-      padding-top: 0; } }
+      padding-top: 20px !important;
+      padding-bottom: 20px !important; } }
+  @media (max-width: 1199px) {
+    header {
+      background: white !important;
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  header .wrapper {
+    z-index: 15; }
+    @media screen and (max-width: 458px) {
+      header .wrapper {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        justify-content: center; } }
   header:after {
     content: '';
     background: url("assets/images/logo-hero-bg.svg") center center;
@@ -7124,18 +7138,7 @@ header {
     position: relative; }
     @media (max-width: 1199px) {
       header .logo {
-        background: white;
-        border-radius: 50%;
-        padding: 200px 200px 50px 200px;
-        margin: -200px -200px -50px -200px; } }
-    @media (max-width: 767px) {
-      header .logo {
-        padding: 150px 150px 50px 150px;
-        margin: -150px -150px -50px -150px; } }
-    @media (max-width: 575px) {
-      header .logo {
-        padding: 60px 10px 60px 70px;
-        margin: -60px -10px -60px -70px; } }
+        background: unset; } }
     header .logo a {
       position: relative;
       z-index: 2; }
@@ -7143,6 +7146,12 @@ header {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: none; }
+    @media (max-width: 1199px) {
+      header a {
+        color: #7f95c1;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.7; } }
   header #primary-menu {
     position: relative;
     z-index: 2; }
@@ -7246,13 +7255,20 @@ section.blogs .blog-block {
     font-weight: bold; }
 
 section#hero {
-  padding-top: 230px;
+  padding-top: 50px;
   height: 100vh;
   color: #FFFFFF; }
+  @media (max-width: 1199px) {
+    section#hero {
+      padding-top: unset;
+      max-height: 80vh; } }
   @media (max-width: 991px) {
     section#hero {
       padding-top: 100px; } }
-  section#hero .hero-content .btn-hero {
+  @media (max-width: 575px) {
+    section#hero {
+      padding-top: 50px; } }
+  section#hero .btn-hero {
     border: 3px solid #ffffff;
     color: #FFFFFF;
     transition: all 0.3s ease;
@@ -7263,11 +7279,11 @@ section#hero {
     font-size: 22px;
     margin-top: 20px;
     min-width: 240px; }
-    section#hero .hero-content .btn-hero span {
+    section#hero .btn-hero span {
       position: relative;
       z-index: 2;
       text-shadow: 2px 2px 5px #6383cc; }
-    section#hero .hero-content .btn-hero:after {
+    section#hero .btn-hero:after {
       content: "";
       position: absolute;
       z-index: 1;
@@ -7277,19 +7293,18 @@ section#hero {
       left: -100%;
       background: linear-gradient(70deg, #7692D2 0%, #8DBEDB 50%, #7692D2 100%) 0 0;
       transition: all 0.3s ease; }
-    section#hero .hero-content .btn-hero:hover:after {
+    section#hero .btn-hero:hover:after {
       right: -100%;
       left: 0; }
-  section#hero .hero-content a {
-    color: #DEF0FF;
-    text-transform: none;
-    text-decoration: none; }
+    section#hero .btn-hero a {
+      color: #DEF0FF;
+      text-transform: none;
+      text-decoration: none; }
   section#hero .hero-image img {
     margin-right: 10px; }
     @media (min-width: 992px) {
       section#hero .hero-image img {
-        padding: 100px;
-        margin-top: -190px; } }
+        padding: 100px; } }
   section#hero .hero-introtext > p {
     font-size: 40px; }
   section#hero .hero-textend {
@@ -7300,6 +7315,9 @@ section.block-companies {
   padding-bottom: 70px;
   position: relative;
   z-index: 10; }
+  @media (max-width: 767px) {
+    section.block-companies {
+      padding-bottom: 0; } }
   section.block-companies .companies-holder {
     max-width: 800px;
     width: 100%;
@@ -7308,20 +7326,20 @@ section.block-companies {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 6px; }
-    section.block-companies .companies-holder .logo-wrapper {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+    @media (max-width: 1199px) {
+      section.block-companies .companies-holder h4 {
+        font-size: 27px; } }
+    @media (max-width: 991px) {
+      section.block-companies .companies-holder h4 {
+        font-size: 24px; } }
+    @media (max-width: 767px) {
+      section.block-companies .companies-holder h4 {
+        font-size: 20px; } }
+    @media (max-width: 767px) {
+      section.block-companies .companies-holder h4 {
+        font-size: 18px; } }
+    section.block-companies .companies-holder img {
       padding: 15px; }
-      @media (min-width: 768px) {
-        section.block-companies .companies-holder .logo-wrapper {
-          justify-content: left; } }
-      section.block-companies .companies-holder .logo-wrapper .logo {
-        height: auto;
-        margin-bottom: 25px; }
-        @media (min-width: 768px) {
-          section.block-companies .companies-holder .logo-wrapper .logo {
-            margin-bottom: 0; } }
 
 section.fp-content h2.fpc-title {
   font-size: 40px;
@@ -7356,9 +7374,13 @@ section.fp-content .fpc-image-left img {
       padding-right: 250px;
       padding-top: 0; } }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   section.fp-content .content-wrapper {
     padding: 100px 0; } }
+
+@media (max-width: 991px) {
+  section.fp-content .content-wrapper {
+    padding: 0; } }
 
 section.fp-content .content-wrapper .fpc-articles {
   padding: 50px; }
@@ -7413,12 +7435,13 @@ section.fp-content .content-wrapper a.card {
 
 #header-hero + .block-companies {
   margin-top: -410px;
-  margin-bottom: 70px; }
-
-section#hero {
-  height: 100vh; }
-  section#hero .hero-content {
-    height: 100vh; }
+  margin-bottom: 0; }
+  @media (max-width: 1199px) {
+    #header-hero + .block-companies {
+      margin-top: -310px; } }
+  @media (max-width: 767px) {
+    #header-hero + .block-companies {
+      margin-top: -70px; } }
 
 section.sign-up {
   padding-top: 100px !important; }

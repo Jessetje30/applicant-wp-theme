@@ -1,16 +1,14 @@
 <section class="block-companies">
     <div class="container">
         <div class="companies-holder">
-            <div class="h4 text-center">
-                <h4><?php the_field('title'); ?></h4>
-            </div>
-            <div class="d-flex">
+                <h4 class="text-center"><?php the_field('title'); ?></h4>
+            <div class="row">
                 <?php
 
                 if (have_rows('companies')):
                     while (have_rows('companies')) : the_row('companies');
                         ?>
-                        <div class="logo-wrapper">
+                        <div class="col-6 col-sm-4 col-md-3 d-flex align-items-end flex-wrap">
                             <?php if (get_sub_field('link')): ?>
                             <a href="<?php the_sub_field('link') ?>">
                                 <?php endif; ?>
